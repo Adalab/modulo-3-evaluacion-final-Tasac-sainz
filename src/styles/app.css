@@ -5,6 +5,27 @@
   text-align: center;
 }
 
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+}
+.list-text {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  height: 340px;
+  width: 200px;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
