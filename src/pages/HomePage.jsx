@@ -5,6 +5,7 @@ import Filters from "../components/Filters";
 const HomePage = () => {
   const [characters, setCharacters] = useState([]);
   const [inputName, setInputName] = useState("");
+  const [inputHouse, setInputHouse] = useState("");
 
   useEffect(() => {
     listCharacters().then((response) => {
@@ -12,19 +13,35 @@ const HomePage = () => {
     });
   }, []);
 
-  const filterByName = characters.filter((character) =>
-    character.name.toLowerCase().includes(inputName.toLowerCase())
-  );
-
   const updateName = (value) => {
     setInputName(value);
   };
 
+  const updateHouse = (value) => {
+    setInputHouse(value);
+  };
+
+  const filteredCharacter = characters.filter((character) => {
+    const filterByName = character.name
+      .toLowerCase()
+      .includes(inputName.toLowerCase());
+    const filterByHouse =
+      character.house &&
+      character.house.toLowerCase().includes(inputHouse.toLowerCase());
+
+    return filterByName && filterByHouse;
+  });
+
   return (
     <div className="Home-container">
-      <Filters updateName={updateName} inputName={inputName} />
+      <Filters
+        updateName={updateName}
+        inputName={inputName}
+        updateHouse={updateHouse}
+        inputHouse={inputHouse}
+      />
       <ul>
-        {filterByName.map((element) => {
+        {filteredCharacter.map((element) => {
           return (
             <li key={element.id}>
               <img
@@ -35,6 +52,7 @@ const HomePage = () => {
               />
               <div className="list-text">
                 <p>{element.name}</p>
+                <p>{element.house}</p>
                 <p>Especie: {element.species}</p>
               </div>
             </li>

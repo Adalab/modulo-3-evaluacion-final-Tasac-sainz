@@ -5,9 +5,12 @@ const NamesFilter = ({ updateName, inputName }) => {
   const handleChangeName = (ev) => {
     updateName(ev.target.value);
   };
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+  };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="name">Busca al personaje por su nombre:</label>
       <input
         className="input-name"
