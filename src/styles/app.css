@@ -3,6 +3,8 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: rgb(128, 128, 128);
+  color: white;
 }
 
 ul {
