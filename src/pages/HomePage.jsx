@@ -25,9 +25,9 @@ const HomePage = () => {
     const filterByName = character.name
       .toLowerCase()
       .includes(inputName.toLowerCase());
-    const filterByHouse =
-      character.house &&
-      character.house.toLowerCase().includes(inputHouse.toLowerCase());
+    const filterByHouse = character.house
+      .toLowerCase()
+      .includes(inputHouse.toLowerCase());
 
     return filterByName && filterByHouse;
   });
