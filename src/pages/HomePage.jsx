@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import apiCharacters from "../services/api";
 import Filters from "../components/Filters";
+import Header from "../components/Header";
 import ListCharacters from "../components/ListCharacters";
 
 const HomePage = () => {
@@ -34,15 +35,18 @@ const HomePage = () => {
   });
 
   return (
-    <div className="home-container">
-      <Filters
-        updateName={updateName}
-        inputName={inputName}
-        updateHouse={updateHouse}
-        inputHouse={inputHouse}
-      />
-      <ListCharacters characters={filteredCharacter} />
-    </div>
+    <>
+      <Header />
+      <div className="home-container">
+        <Filters
+          updateName={updateName}
+          inputName={inputName}
+          updateHouse={updateHouse}
+          inputHouse={inputHouse}
+        />
+        <ListCharacters characters={filteredCharacter} />
+      </div>
+    </>
   );
 };
 

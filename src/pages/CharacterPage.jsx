@@ -1,7 +1,7 @@
 import "react";
 
 const CharacterPage = () => {
-  return;
+  return <Header />;
 };
 
 export default CharacterPage;
