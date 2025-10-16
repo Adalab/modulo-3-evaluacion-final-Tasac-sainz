@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import listCharacters from "../services/api";
+import apiCharacters from "../services/api";
 import Filters from "../components/Filters";
+import ListCharacters from "../components/ListCharacters";
 
 const HomePage = () => {
   const [characters, setCharacters] = useState([]);
@@ -8,7 +9,7 @@ const HomePage = () => {
   const [inputHouse, setInputHouse] = useState("");
 
   useEffect(() => {
-    listCharacters().then((response) => {
+    apiCharacters().then((response) => {
       setCharacters(response);
     });
   }, []);
@@ -33,32 +34,14 @@ const HomePage = () => {
   });
 
   return (
-    <div className="Home-container">
+    <div className="home-container">
       <Filters
         updateName={updateName}
         inputName={inputName}
         updateHouse={updateHouse}
         inputHouse={inputHouse}
       />
-      <ul>
-        {filteredCharacter.map((element) => {
-          return (
-            <li key={element.id}>
-              <img
-                src={
-                  element.image ||
-                  "https://placehold.co/200x350/611010/000000?text=Harry+Potter"
-                }
-              />
-              <div className="list-text">
-                <p>{element.name}</p>
-                <p>{element.house}</p>
-                <p>Especie: {element.species}</p>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+      <ListCharacters characters={filteredCharacter} />
     </div>
   );
 };

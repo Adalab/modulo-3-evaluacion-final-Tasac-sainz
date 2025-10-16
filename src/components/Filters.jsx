@@ -5,10 +5,10 @@ import HouseFilter from "./HouseFilter";
 
 const Filters = ({ updateName, inputName, updateHouse, inputHouse }) => {
   return (
-    <>
+    <div className="filters">
       <NamesFilter updateName={updateName} inputName={inputName} />
       <HouseFilter updateHouse={updateHouse} inputHouse={inputHouse} />
-    </>
+    </div>
   );
 };
 export default Filters;

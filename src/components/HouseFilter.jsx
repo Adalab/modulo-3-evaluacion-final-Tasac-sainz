@@ -15,13 +15,19 @@ const HouseFilter = ({ updateHouse, inputHouse }) => {
       <label htmlFor="house">
         Escribe aquí el nombre de la casa que quieres consultar:
       </label>
-      <input
+      <select
+        className="input-name"
         name="house"
         id="house"
-        placeholder="Griffindor"
         value={inputHouse}
         onChange={handleChangeHouse}
-      ></input>
+      >
+        <option value="">Selecciona una casa</option>
+        <option value="Gryffindor">Gryffindor</option>
+        <option value="Slytherin">Slytherin</option>
+        <option value="Hufflepuff">Hufflepuff</option>
+        <option value="Ravenclaw">Ravenclaw</option>
+      </select>
     </form>
   );
 };

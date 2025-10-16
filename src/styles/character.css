@@ -1,0 +1,21 @@
+.list-text {
+  line-height: 1.5;
+  padding: 2px;
+  background-color: rgb(192, 160, 69);
+  border-radius: 6px;
+  font-weight: 600;
+}
+.list-text p {
+  margin: 0;
+}
+button {
+  padding: 1px;
+  width: 50%;
+  margin: 6px auto 12px auto;
+}
+img {
+  height: 320px;
+  width: 200px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: px;
+}
