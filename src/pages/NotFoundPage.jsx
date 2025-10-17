@@ -6,9 +6,11 @@ const NotFoundPage = () => {
   return (
     <>
       <Header />
-      <h1>Página no encontrada, pincha abajo para volver</h1>
+      <h2>Página no encontrada, pincha abajo para volver</h2>
       <h2>
-        <Link to="/"></Link>Inicio
+        <Link to="/" className="links detail-link">
+          Inicio
+        </Link>
       </h2>
     </>
   );
