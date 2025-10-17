@@ -33,3 +33,16 @@ li {
   margin-left: 15px;
   font-size: 16px;
 }
+.links {
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgba(142, 141, 141, 0.932);
+  border: solid;
+  border-color: black;
+  border-width: 1px;
+}
+.detail-link {
+  background-color: rgba(108, 21, 21, 0.785);
+  padding: 10px;
+}

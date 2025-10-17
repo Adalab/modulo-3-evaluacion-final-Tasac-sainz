@@ -14,11 +14,12 @@ const Character = ({ element }) => {
       />
       <div className="list-text">
         {element.name}
-        <p>Casa: {element.house}</p>
         <p>Especie: {element.species}</p>
-        <button>
-          <Link to="/CharacterPage:character.id"></Link>Ficha 🔍
-        </button>
+        <div className="space-link">
+          <Link to={`/character/${element.id}`} className="links">
+            Ficha 🔍
+          </Link>
+        </div>
       </div>
     </li>
   );
@@ -27,5 +28,5 @@ const Character = ({ element }) => {
 export default Character;
 
 Character.PropTypes = {
-  element: PropTypes.string.isRequired,
+  element: PropTypes.object.isRequired,
 };

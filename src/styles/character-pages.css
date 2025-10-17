@@ -1,0 +1,30 @@
+#root {
+  width: 100%;
+}
+.selected-container {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(97, 16, 16);
+  width: 50%;
+  margin: 0 auto 40px;
+}
+.selected-img {
+  width: 50%;
+  height: auto;
+}
+.selected-text {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 40px;
+  font-size: 18px;
+  text-align: left;
+  font-weight: 600;
+}
+.character-name {
+  font-size: 30px;
+  line-height: 40px;
+}
+.detail-link {
+  background-color: blueviolet;
+}
