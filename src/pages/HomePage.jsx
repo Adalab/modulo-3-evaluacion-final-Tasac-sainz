@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import apiCharacters from "../services/api";
 import Filters from "../components/Filters";
 import Header from "../components/Header";
+import ResetComponent from "../components/ResetComponent";
 import ListCharacters from "../components/ListCharacters";
 
 const HomePage = () => {
@@ -43,6 +44,10 @@ const HomePage = () => {
           inputName={inputName}
           updateHouse={updateHouse}
           inputHouse={inputHouse}
+        />
+        <ResetComponent
+          setInputName={setInputName}
+          setInputHouse={setInputHouse}
         />
         <ListCharacters characters={filteredCharacter} />
       </div>

@@ -32,6 +32,9 @@ li {
   border-radius: 6px;
   margin-left: 15px;
   font-size: 16px;
+  border: solid;
+  border-color: #c0a045;
+  border-width: 2px;
 }
 .links {
   color: white;
@@ -45,4 +48,9 @@ li {
 .detail-link {
   background-color: rgba(108, 21, 21, 0.785);
   padding: 10px;
+}
+.btn-reset {
+  width: 10%;
+  align-self: center;
+  background-color: #c0a045;
 }
