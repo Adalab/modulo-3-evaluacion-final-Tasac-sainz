@@ -4,11 +4,12 @@ import Filters from "../components/Filters";
 import Header from "../components/Header";
 import ResetComponent from "../components/ResetComponent";
 import ListCharacters from "../components/ListCharacters";
+import ls from "../services/localStorage";
 
 const HomePage = () => {
   const [characters, setCharacters] = useState([]);
-  const [inputName, setInputName] = useState("");
-  const [inputHouse, setInputHouse] = useState("");
+  const [inputName, setInputName] = useState(ls.get("userName", ""));
+  const [inputHouse, setInputHouse] = useState(ls.get("userHouse", ""));
 
   useEffect(() => {
     apiCharacters().then((response) => {
@@ -18,10 +19,12 @@ const HomePage = () => {
 
   const updateName = (value) => {
     setInputName(value);
+    ls.set("userName", value);
   };
 
   const updateHouse = (value) => {
     setInputHouse(value);
+    ls.set("userHouse", value);
   };
 
   const filteredCharacter = characters.filter((character) => {

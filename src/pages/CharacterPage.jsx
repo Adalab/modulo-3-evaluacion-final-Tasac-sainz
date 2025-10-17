@@ -20,14 +20,16 @@ const CharacterPage = () => {
   return (
     <>
       <Header />
+      <div className="link-container">
+        <Link to="/" className="links detail-link">
+          Volver
+        </Link>
+      </div>
       {element ? (
         <SelectedCharacter character={element} />
       ) : (
         <h2>Personaje no encontrado</h2>
       )}
-      <Link to="/" className="links detail-link">
-        Volver
-      </Link>
     </>
   );
 };

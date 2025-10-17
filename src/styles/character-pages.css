@@ -6,7 +6,7 @@
   justify-content: center;
   background-color: rgb(97, 16, 16);
   width: 50%;
-  margin: 0 auto 40px;
+  margin: 20px auto 40px;
 }
 .selected-img {
   width: 50%;
@@ -25,6 +25,6 @@
   font-size: 30px;
   line-height: 40px;
 }
-.detail-link {
-  background-color: blueviolet;
+.link-container {
+  margin-left: 45%;
 }
