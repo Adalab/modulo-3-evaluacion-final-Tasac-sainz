@@ -1,10 +1,13 @@
 import "react";
 import PropType from "prop-types";
+import ls from "../services/localStorage";
 
 const ResetComponent = ({ setInputName, setInputHouse }) => {
   const handleReset = () => {
     setInputName("");
     setInputHouse("");
+    ls.remove("userName");
+    ls.remove("userHouse");
   };
 
   return (

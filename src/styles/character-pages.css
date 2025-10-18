@@ -4,20 +4,24 @@
 .selected-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   background-color: rgb(97, 16, 16);
-  width: 50%;
+  width: 60%;
   margin: 20px auto 40px;
 }
 .selected-img {
   width: 50%;
-  height: auto;
+  height: 450%;
+  align-self: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 .selected-text {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   padding: 40px;
-  font-size: 18px;
+  font-size: 16px;
   text-align: left;
   font-weight: 600;
 }
@@ -25,6 +29,17 @@
   font-size: 30px;
   line-height: 40px;
 }
+.specific-text {
+  line-height: 10px;
+}
 .link-container {
   margin-left: 45%;
+}
+.shield-container {
+  width: 250px;
+  height: 200px;
+}
+.shield {
+  width: 250px;
+  height: 200px;
 }

@@ -54,3 +54,7 @@ li {
   align-self: center;
   background-color: #c0a045;
 }
+.not-found-character {
+  font-size: 24px;
+  font-weight: 600;
+}

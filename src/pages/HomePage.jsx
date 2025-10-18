@@ -7,15 +7,18 @@ import ListCharacters from "../components/ListCharacters";
 import ls from "../services/localStorage";
 
 const HomePage = () => {
-  const [characters, setCharacters] = useState([]);
+  const [characters, setCharacters] = useState(ls.get("initialCharacter", []));
   const [inputName, setInputName] = useState(ls.get("userName", ""));
   const [inputHouse, setInputHouse] = useState(ls.get("userHouse", ""));
 
   useEffect(() => {
-    apiCharacters().then((response) => {
-      setCharacters(response);
-    });
-  }, []);
+    if (characters.length === 0) {
+      apiCharacters().then((response) => {
+        setCharacters(response);
+        ls.set("initialCharater", response);
+      });
+    }
+  }, [characters.length]);
 
   const updateName = (value) => {
     setInputName(value);
@@ -52,7 +55,11 @@ const HomePage = () => {
           setInputName={setInputName}
           setInputHouse={setInputHouse}
         />
-        <ListCharacters characters={filteredCharacter} />
+        {filteredCharacter.length > 0 ? (
+          <ListCharacters characters={filteredCharacter} />
+        ) : (
+          <p className="not-found-character">Uppss, personaje no encontrado</p>
+        )}
       </div>
     </>
   );
