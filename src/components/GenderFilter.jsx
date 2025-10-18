@@ -21,8 +21,8 @@ const GenderFilter = ({ updateGender, inputGender }) => {
         onChange={handleChangeGender}
       >
         <option value="">Todos</option>
-        <option value="male">Masculino</option>
         <option value="female">Femenino</option>
+        <option value="male">Masculino</option>
       </select>
     </form>
   );
