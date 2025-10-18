@@ -10,6 +10,7 @@ const HomePage = () => {
   const [characters, setCharacters] = useState(ls.get("initialCharacter", []));
   const [inputName, setInputName] = useState(ls.get("userName", ""));
   const [inputHouse, setInputHouse] = useState(ls.get("userHouse", ""));
+  const [inputGender, setInputGender] = useState(ls.get("userGender", ""));
 
   useEffect(() => {
     if (characters.length === 0) {
@@ -30,16 +31,31 @@ const HomePage = () => {
     ls.set("userHouse", value);
   };
 
-  const filteredCharacter = characters.filter((character) => {
-    const filterByName = character.name
-      .toLowerCase()
-      .includes(inputName.toLowerCase());
-    const filterByHouse = character.house
-      .toLowerCase()
-      .includes(inputHouse.toLowerCase());
+  const updateGender = (value) => {
+    setInputGender(value);
+    ls.set("userGender", value);
+  };
 
-    return filterByName && filterByHouse;
-  });
+  const filteredCharacter = characters
+    .filter((character) =>
+      character.name.toLowerCase().includes(inputName.toLowerCase())
+    )
+
+    .filter((character) => {
+      if (inputHouse === "") {
+        return true;
+      } else {
+        return character.house === inputHouse;
+      }
+    })
+
+    .filter((character) => {
+      if (inputGender === "") {
+        return true;
+      } else {
+        return character.gender === inputGender;
+      }
+    });
 
   return (
     <>
@@ -50,10 +66,13 @@ const HomePage = () => {
           inputName={inputName}
           updateHouse={updateHouse}
           inputHouse={inputHouse}
+          updateGender={updateGender}
+          inputGender={inputGender}
         />
         <ResetComponent
           setInputName={setInputName}
           setInputHouse={setInputHouse}
+          setInputGender={setInputGender}
         />
         {filteredCharacter.length > 0 ? (
           <ListCharacters characters={filteredCharacter} />
